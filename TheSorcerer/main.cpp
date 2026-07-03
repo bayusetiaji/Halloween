@@ -32,7 +32,7 @@ Sorcerer sorc;
 std::vector<Ghost> ghosts;
 std::vector<Cloud> clouds;
 
-bool collision(Sorcerer, Ghost);
+bool collision(const Sorcerer&, const Ghost&);
 void addGhost();
 void initGame();
 void updateGame(double);
@@ -89,11 +89,12 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	return 0;
 }
 
-bool collision(Sorcerer s, Ghost g)
+bool collision(const Sorcerer& s, const Ghost& g)
 {
 	double dx = s.position().x - g.position().x;
 	double dy = s.position().y - g.position().y;
-	if (hypot(dx, dy) <= s.radius() + g.radius())
+	double radiusSum = s.radius() + g.radius();
+	if (dx * dx + dy * dy <= radiusSum * radiusSum)
 		return true;
 
 	return false;

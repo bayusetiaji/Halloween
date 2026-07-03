@@ -59,7 +59,7 @@ void Sorcerer::draw()
 	slSetForeColor(1, 1, 1, 1);
 	slSprite(texture.res_id, pos.x, pos.y, texture.width, texture.height);
 	
-	for (Particle p : particles)
+	for (const Particle& p : particles)
 		p.draw();
 }
 
