@@ -1,4 +1,4 @@
-#include <sl.h>
+ #include <sl.h>
 #include "keylistener.h"
 
 KeyListener::KeyListener(int c) : key{ c }, pressed{ false }, time{ 0 }

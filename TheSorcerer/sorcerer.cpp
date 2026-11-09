@@ -38,16 +38,16 @@ void Sorcerer::jump(double _power)
 
 void Sorcerer::update(double _fps)
 {
-	if (die())
-		return;
-
-	time += slGetDeltaTime();
-	if (time >= 1 / _fps)
+	if (!die())
 	{
-		vel += gravity;
-		pos += vel;
+		time += slGetDeltaTime();
+		if (time >= 1 / _fps)
+		{
+			vel += gravity;
+			pos += vel;
 
-		time = 0;
+			time = 0;
+		}
 	}
 
 	for (Particle& p : particles)
