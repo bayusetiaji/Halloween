@@ -421,30 +421,30 @@ void drawReadyScreen()
 	drawText("The Sorcerer", font2, 54, 400, 438, SL_ALIGN_CENTER);
 
 	slSetForeColor(0.85, 0.8, 1.0, 0.85);
-	drawText("A Halloween Flappy Adventure", font, 13, 400, 392, SL_ALIGN_CENTER);
+	drawText("A Halloween Flappy Adventure", font, 17, 400, 392, SL_ALIGN_CENTER);
 
 	slSetForeColor(0.75, 0.45, 1.0, 0.35);
 	slLine(280, 370, 520, 370);
 
 	slSetForeColor(1, 1, 1, 0.85);
-	drawText("SPACE   fly", font, 16, 400, 334, SL_ALIGN_CENTER);
+	drawText("SPACE   fly", font, 20, 400, 334, SL_ALIGN_CENTER);
 
-	slSetForeColor(1, 1, 1, 0.65);
+	slSetForeColor(1, 1, 1, 0.68);
 	std::string musicHint = std::string("P / ESC   pause        M   music  ") + (musicOn ? "ON" : "OFF");
-	drawText(musicHint.c_str(), font, 12, 400, 304, SL_ALIGN_CENTER);
+	drawText(musicHint.c_str(), font, 14, 400, 304, SL_ALIGN_CENTER);
 
-	slSetForeColor(1, 1, 1, 0.45);
-	drawText("BEST SCORE", font, 9, 400, 270, SL_ALIGN_CENTER);
+	slSetForeColor(1, 1, 1, 0.5);
+	drawText("BEST SCORE", font, 12, 400, 270, SL_ALIGN_CENTER);
 
 	slSetForeColor(1, 0.85, 0.3, 0.95);
-	drawText(std::to_string(highscore).c_str(), font, 22, 400, 248, SL_ALIGN_CENTER);
+	drawText(std::to_string(highscore).c_str(), font, 28, 400, 248, SL_ALIGN_CENTER);
 
 	double pulse = 0.5 + 0.5 * sin(slGetTime() * 4.0);
 	slSetForeColor(1, 0.6, 0.2, 0.55 + 0.45 * pulse);
-	drawText("PRESS SPACE TO START", font2, 22, 400, 205, SL_ALIGN_CENTER);
+	drawText("PRESS SPACE TO START", font2, 26, 400, 205, SL_ALIGN_CENTER);
 
-	slSetForeColor(1, 1, 1, 0.35);
-	drawText("a game by bayusetiaji@amikom.ac.id", font, 9, 400, 148, SL_ALIGN_CENTER);
+	slSetForeColor(1, 1, 1, 0.45);
+	drawText("a game by bayusetiaji@amikom.ac.id", font, 14, 400, 148, SL_ALIGN_CENTER);
 }
 
 void drawPauseScreen()
@@ -458,12 +458,12 @@ void drawPauseScreen()
 	drawText("PAUSED", font2, 52, 400, 360, SL_ALIGN_CENTER);
 
 	slSetForeColor(1, 1, 1, 0.8);
-	drawText("P / ESC   resume", font, 14, 400, 305, SL_ALIGN_CENTER);
+	drawText("P / ESC   resume", font, 17, 400, 302, SL_ALIGN_CENTER);
 
-	slSetForeColor(1, 1, 1, 0.6);
+	slSetForeColor(1, 1, 1, 0.65);
 	std::string music = std::string("M   music  ") + (musicOn ? "ON" : "OFF");
-	drawText(music.c_str(), font, 11, 400, 275, SL_ALIGN_CENTER);
-	drawText("R   restart", font, 11, 400, 250, SL_ALIGN_CENTER);
+	drawText(music.c_str(), font, 14, 400, 272, SL_ALIGN_CENTER);
+	drawText("R   restart", font, 14, 400, 246, SL_ALIGN_CENTER);
 }
 
 void drawGameOverScreen()
@@ -476,14 +476,14 @@ void drawGameOverScreen()
 	slSetForeColor(1, 0.35, 0.3, 1);
 	drawText("GAME OVER", font2, 58, 400, 438, SL_ALIGN_CENTER);
 
-	slSetForeColor(1, 1, 1, 0.45);
-	drawText("SCORE", font, 9, 310, 380, SL_ALIGN_CENTER);
+	slSetForeColor(1, 1, 1, 0.5);
+	drawText("SCORE", font, 12, 310, 382, SL_ALIGN_CENTER);
 
 	slSetForeColor(1, 1, 1, 0.95);
 	drawText(std::to_string(score).c_str(), font, 34, 310, 350, SL_ALIGN_CENTER);
 
-	slSetForeColor(1, 1, 1, 0.45);
-	drawText("BEST", font, 9, 490, 380, SL_ALIGN_CENTER);
+	slSetForeColor(1, 1, 1, 0.5);
+	drawText("BEST", font, 12, 490, 382, SL_ALIGN_CENTER);
 
 	slSetForeColor(1, 0.85, 0.3, 0.95);
 	drawText(std::to_string(highscore).c_str(), font, 34, 490, 350, SL_ALIGN_CENTER);
@@ -492,26 +492,26 @@ void drawGameOverScreen()
 	{
 		double pulse = 0.5 + 0.5 * sin(slGetTime() * 6.0);
 		slSetForeColor(1, 0.9, 0.35, 0.55 + 0.45 * pulse);
-		drawText("NEW BEST!", font2, 22, 400, 310, SL_ALIGN_CENTER);
+		drawText("NEW BEST!", font2, 24, 400, 306, SL_ALIGN_CENTER);
 	}
 
 	slSetForeColor(1, 0.6, 0.2, 0.9);
-	drawText("Press R to play again", font, 15, 400, 268, SL_ALIGN_CENTER);
+	drawText("Press R to play again", font, 18, 400, 264, SL_ALIGN_CENTER);
 
-	slSetForeColor(1, 1, 1, 0.45);
+	slSetForeColor(1, 1, 1, 0.5);
 	std::string musicHint = std::string("SPACE  fly     P  pause     M  music  ") + (musicOn ? "ON" : "OFF");
-	drawText(musicHint.c_str(), font, 9, 400, 240, SL_ALIGN_CENTER);
+	drawText(musicHint.c_str(), font, 12, 400, 236, SL_ALIGN_CENTER);
 
 	slSetForeColor(0.75, 0.45, 1.0, 0.35);
-	slLine(260, 220, 540, 220);
+	slLine(260, 214, 540, 214);
+
+	slSetForeColor(1, 1, 1, 0.5);
+	drawText("a game by bayusetiaji@amikom.ac.id", font, 13, 400, 194, SL_ALIGN_CENTER);
+	drawText("fonts: Halloween Too / F25 Bank Printer", font, 11, 400, 176, SL_ALIGN_CENTER);
+	drawText("music: Halloween - CapCut audio library", font, 11, 400, 160, SL_ALIGN_CENTER);
 
 	slSetForeColor(1, 1, 1, 0.4);
-	drawText("a game by bayusetiaji@amikom.ac.id", font, 9, 400, 198, SL_ALIGN_CENTER);
-	drawText("fonts: Halloween Too / F25 Bank Printer", font, 8, 400, 182, SL_ALIGN_CENTER);
-	drawText("music: Halloween - CapCut audio library", font, 8, 400, 168, SL_ALIGN_CENTER);
-
-	slSetForeColor(1, 1, 1, 0.3);
-	drawText("Press ESC to quit", font, 9, 400, 142, SL_ALIGN_CENTER);
+	drawText("Press ESC to quit", font, 13, 400, 132, SL_ALIGN_CENTER);
 }
 
 const char* stateName(GameState _state)
